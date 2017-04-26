@@ -20,7 +20,8 @@ package to send a POST request with the image data to the server.
     ```javascript
     const upload = require('gyazo-browser-upload')
     const redDotImage = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg=='
-    upload(redDotImage, {clientId: 'My client'})
+    const options = {clientId: 'My client'}
+    upload(redDotImage, options)
       .then((info) {
          info.url // URL of the image
          info.id // ID of the image
