@@ -1,5 +1,7 @@
 # gyazo-browser-upload
 
+[![Build Status](https://travis-ci.org/martinheidegger/gyazo-browser-upload.svg?branch=master)](https://travis-ci.org/martinheidegger/gyazo-browser-upload)
+
 Lightweight in-browser library to simply upload a base64 image to gyazo.
 
 ## Why?
