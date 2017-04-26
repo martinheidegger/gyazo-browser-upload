@@ -1,0 +1,35 @@
+{
+  "name": "gyazo-browser-upload",
+  "version": "1.0.0",
+  "description": "Lightweight in-browser library to simply upload a base64 image to gyazo.",
+  "main": "index.js",
+  "scripts": {
+    "lint": "./node_modules/.bin/standard",
+    "test": "npm run lint && npm run quick",
+    "quick": "./node_modules/.bin/tape test/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/martinheidegger/gyazo-browser-api.git"
+  },
+  "keywords": [
+    "gyazo",
+    "browser",
+    "upload",
+    "image"
+  ],
+  "author": "Martin Heidegger <martin.heidegger@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/martinheidegger/gyazo-browser-api/issues"
+  },
+  "homepage": "https://github.com/martinheidegger/gyazo-browser-api#readme",
+  "dependencies": {
+    "superagent": "^3.5.2"
+  },
+  "devDependencies": {
+    "nock": "^9.0.13",
+    "standard": "^10.0.2",
+    "tape": "^4.6.3"
+  }
+}
