@@ -14,6 +14,7 @@ test(function (t) {
   var imageUrl = '/' + imageId
   var otherDomain = 'https://moxy.com'
   var otherLocation = otherDomain + imageUrl + '/'
+  var title = '日本語のタイトル  with some english text, and special chars like $%!{~@l}'
 
   // Go to the easy_auth endpoint
   nock(domain)
@@ -21,6 +22,7 @@ test(function (t) {
       body = qs.parse(body)
       t.equals(body.client_id, CLIENT_ID)
       t.equals(body.image_url, redDotImage)
+      t.equals(body.title, title)
       return true
     })
     .reply(200, {
@@ -46,7 +48,10 @@ test(function (t) {
     .get(imageUrl + '/')
     .reply(200, 'OK')
 
-  gyazo(redDotImage, {clientId: CLIENT_ID})
+  gyazo(redDotImage, {
+    clientId: CLIENT_ID,
+    title: title
+  })
     .then(function (result) {
       t.equals(result.url, otherLocation)
       t.equals(result.imageId, imageId)

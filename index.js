@@ -11,7 +11,7 @@ module.exports = function (dataUrl, options) {
     referer_url: referer,
     client_id: options.clientId,
     image_url: dataUrl,
-    title: options.title !== undefined ? encodeURIComponent(options.title) : undefined
+    title: options.title
   }
 
   return request.post(reqUrl)
