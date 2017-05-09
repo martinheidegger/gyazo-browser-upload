@@ -10,6 +10,11 @@ Lightweight in-browser library to simply upload a base64 image to gyazo.
 well but it requires authentication. This library is a in-browser library
 that allows to simply upload an image to your gyazo account.
 
+## Important
+
+Right now only `https://scrapbox.io` is allowed to upload to the default `reqUrl`!
+Supply a custom `reqUrl` for your server/service.
+
 ## How?
 
 It uses the lightweight [superagent](https://github.com/visionmedia/superagent)
