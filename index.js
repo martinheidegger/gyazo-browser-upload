@@ -10,7 +10,7 @@ module.exports = function (dataUrl, options) {
   var sendObject = {
     referer_url: referer,
     client_id: options.clientId,
-    image_url: encodeURIComponent(dataUrl),
+    image_url: dataUrl,
     title: options.title !== undefined ? encodeURIComponent(options.title) : undefined
   }
 

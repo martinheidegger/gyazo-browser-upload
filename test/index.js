@@ -1,6 +1,7 @@
 var nock = require('nock')
 var test = require('tape')
 var gyazo = require('..')
+var qs = require('querystring')
 
 var CLIENT_ID = 'gyazo-browser-api/test'
 
@@ -16,7 +17,12 @@ test(function (t) {
 
   // Go to the easy_auth endpoint
   nock(domain)
-    .post('/api/upload/easy_auth')
+    .post('/api/upload/easy_auth', function (body) {
+      body = qs.parse(body)
+      t.equals(body.client_id, CLIENT_ID)
+      t.equals(body.image_url, redDotImage)
+      return true
+    })
     .reply(200, {
       get_image_url: domain + imageUrl
     })
