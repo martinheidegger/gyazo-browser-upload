@@ -34,7 +34,7 @@ module.exports = function (dataUrl, options) {
           }
           return {
             url: gyazoUrl,
-            imageId: gyazoUrl.match(/[a-f0-9]{32}/)[0]
+            imageId: match[0]
           }
         })
     })
