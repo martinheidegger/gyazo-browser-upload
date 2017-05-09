@@ -25,6 +25,8 @@ module.exports = function (dataUrl, options) {
         .then(function (res) {
           if (res.redirects && res.redirects.length > 0) {
             gyazoUrl = res.redirects[res.redirects.length - 1]
+          } else if (res.xhr) {
+            gyazoUrl = res.xhr.responseURL
           }
           var match = gyazoUrl.match(/[a-f0-9]{32}/)
           if (!match) {
